@@ -1070,6 +1070,14 @@ Features
 5.3.0
 .....
 
+Breaking changes
+~~~~~~~~~~~~~~~~
+
+``SparkKubernetesOperator`` will now monitor the pod, blocking downstream tasks until it succeeds.
+Prior to this, it would submit the spark job to k8s and immediately mark itself successful, requiring a ``SparkKubernetesSensor`` to monitor the job.
+
+* ``enhance spark_k8s_operator (#29977)``
+
 Features
 ~~~~~~~~
 
